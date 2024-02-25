@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func salesCommission() {
 	var weeklyEarnings float64 = 200
