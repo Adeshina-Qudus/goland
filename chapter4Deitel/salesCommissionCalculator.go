@@ -1,16 +1,35 @@
 package main
 
-import (
-	"fmt"
-)
+type SalesCommission struct {
+	priceForItemSold float64
+}
 
-func salesCommission() {
-	var weeklyEarnings float64 = 200
-	var totalEarnings float64
-	fmt.Print("Enter item sold : ")
-	var itemSold float64
-	fmt.Scan(&itemSold)
-	var ninePercent = (9 * itemSold) / 100
-	totalEarnings = ninePercent + weeklyEarnings
-	fmt.Println("Total Earnings is ", totalEarnings)
+func getSalary() float64 {
+	return 200
+}
+
+func getPercentage() float64 {
+	return 0.09
+}
+
+func (sales *SalesCommission) setPriceForItemSold(priceForItemSold float64) {
+	if priceForItemSold < 0 {
+		sales.priceForItemSold = 0
+	} else {
+		sales.priceForItemSold = priceForItemSold
+	}
+}
+
+func (sales *SalesCommission) getPriceForItemSold() float64 {
+	return sales.priceForItemSold
+}
+
+func calculateCommission() float64 {
+	var sale *SalesCommission
+	return getPercentage() * sale.getPriceForItemSold()
+
+}
+
+func calculateTotalSalary() float64 {
+	return calculateCommission() + getSalary()
 }
