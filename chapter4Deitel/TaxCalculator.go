@@ -1,19 +1,36 @@
 package main
 
-import "fmt"
+type TaxCalculator struct {
+	name     string
+	earnings float64
+}
 
-func taxCalculator() {
-	fmt.Print("Enter Name : ")
-	var name string
-	fmt.Scan(&name)
-	fmt.Print("Enter Earnings : ")
-	var earning float64
-	fmt.Scan(&earning)
-	var tax = 0.0
-	if earning <= 30000 {
-		tax = earning * 0.15
+func (tax *TaxCalculator) setName(name string) {
+	tax.name = name
+}
+
+func (tax *TaxCalculator) getName() string {
+	return tax.name
+}
+
+func (tax *TaxCalculator) setEarnings(earning float64) {
+	if earning < 0 {
+		tax.earnings = 0
 	} else {
-		tax = earning * 0.20
+		tax.earnings = earning
 	}
-	fmt.Println(name, " Tax is ", tax)
+}
+
+func (tax *TaxCalculator) getEarning() float64 {
+	return tax.earnings
+}
+
+func (tax *TaxCalculator) calculateTaxRate() float64 {
+	var taxRate float64
+	if tax.earnings <= 30_000 {
+		taxRate = 0.15 * tax.getEarning()
+	} else {
+		taxRate = 0.20 * tax.getEarning()
+	}
+	return taxRate
 }
