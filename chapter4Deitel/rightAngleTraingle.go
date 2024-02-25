@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func rightAngleTriangle() {
 	fmt.Println("Enter the length of the base of a triangle ")
 	var input int
 	fmt.Scan(&input)
