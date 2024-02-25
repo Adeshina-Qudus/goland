@@ -1,5 +1,5 @@
 package main
 
 func main() {
-	palindromes()
+	binaryToDecimal("1101")
 }
