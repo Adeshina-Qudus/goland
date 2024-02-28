@@ -1,15 +1,31 @@
 package main
 
+import "fmt"
+
 func diamond() {
-	print5Asterisk()
-
-}
-
-func print5Asterisk() {
-	for asterisk := 0; asterisk < 5; asterisk++ {
-		for count := asterisk; count < 5; count++ {
-			print(" * ")
+	for row := 0; row < 10; row++ {
+		for column := row; column < 10; column++ {
+			fmt.Print(" ")
 		}
-		println("")
+		for column := 1; column < row; column++ {
+			fmt.Print("*")
+		}
+		for column := 0; column < row; column++ {
+			fmt.Print("*")
+		}
+
+		fmt.Println("")
+	}
+	for row := 0; row < 10; row++ {
+		for column := 0; column < row; column++ {
+			fmt.Print(" ")
+		}
+		for column := row + 1; column < 10; column++ {
+			fmt.Print("*")
+		}
+		for column := row; column < 10; column++ {
+			fmt.Print("*")
+		}
+		fmt.Println("")
 	}
 }
