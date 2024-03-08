@@ -1,7 +1,7 @@
 package main
 
-func twoSum(input [4]int, target int) [2]int {
-	var result [2]int
+func twoSum(input []int, target int) []int {
+	var result []int
 	for getIndex := 0; getIndex < len(input); getIndex++ {
 		for getElement := 1; getElement < len(input); getElement++ {
 			if input[getIndex]+input[getElement] == target {
