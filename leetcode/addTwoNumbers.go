@@ -1,6 +1,8 @@
 package main
 
-import "strconv"
+import (
+	"strconv"
+)
 
 func addTwoNumbers(firstList []int, secondList []int) []int {
 	var firstValue = toString(firstList)
@@ -16,7 +18,8 @@ func addTwoNumbers(firstList []int, secondList []int) []int {
 func toList(result string) []int {
 	var resultList []int
 	for eachElement := len(result) - 1; eachElement >= 0; eachElement-- {
-		resultList[eachElement] = int(result[eachElement])
+		eachvalue, _ := strconv.Atoi(strconv.Itoa(int(result[eachElement])))
+		resultList = append(resultList, eachvalue)
 	}
 	return resultList
 }
