@@ -9,8 +9,16 @@ func addTwoNumbers(firstList []int, secondList []int) []int {
 	intSecondValue, _ := strconv.Atoi(secondValue)
 	totalOfNumbers := intFirstValue + intSecondValue
 	result := strconv.Itoa(totalOfNumbers)
-	listOfResult :=
+	var listOfResult []int = toList(result)
+	return listOfResult
+}
 
+func toList(result string) []int {
+	var resultList []int
+	for eachElement := len(result) - 1; eachElement <= 0; eachElement-- {
+		resultList[eachElement] = int(result[eachElement])
+	}
+	return resultList
 }
 
 func toString(list []int) string {
