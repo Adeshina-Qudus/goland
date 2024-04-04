@@ -1,6 +1,6 @@
-package main
+package leetcode
 
-func twoSum(input []int, target int) []int {
+func TwoSum(input []int, target int) []int {
 	var result []int
 	for getIndex := 0; getIndex < len(input); getIndex++ {
 		for getElement := 1; getElement < len(input); getElement++ {

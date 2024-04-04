@@ -1,4 +1,4 @@
-package main
+package leetcode
 
 func anagram(firstInput string, secondInput string) bool {
 	counter := 0
